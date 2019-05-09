@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  terraform:
+    image: andrewstucki/bootstrap:0.0.1
+    entrypoint: terraform
+    working_dir: /project
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - CIRCLECI_TOKEN
+      - CIRCLECI_ORGANIZATION
+      - GITHUB_TOKEN
+      - GITHUB_ORGANIZATION
+    volumes:
+      - .:/project
